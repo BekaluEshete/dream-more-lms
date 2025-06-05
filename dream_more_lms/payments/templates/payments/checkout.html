@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Checkout</title>
+</head>
+<body>
+    <h2>Pay for {{ title }}</h2>
+    <p>Description: {{ description }}</p>
+    <p>Amount: {{ amount }} ETB</p>
+    <form method="POST" action="https://api.chapa.co/v1/hosted/pay">
+        <input type="hidden" name="public_key" value="{{ public_key }}" />
+        <input type="hidden" name="tx_ref" value="{{ tx_ref }}" />
+        <input type="hidden" name="amount" value="{{ amount }}" />
+        <input type="hidden" name="currency" value="{{ currency }}" />
+        <input type="hidden" name="email" value="{{ email }}" />
+        <input type="hidden" name="first_name" value="{{ first_name }}" />
+        <input type="hidden" name="last_name" value="{{ last_name }}" />
+        <input type="hidden" name="title" value="{{ title }}" />
+        <input type="hidden" name="description" value="{{ description }}" />
+        <input type="hidden" name="callback_url" value="{{ callback_url }}" />
+        <input type="hidden" name="return_url" value="{{ return_url }}" />
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>
